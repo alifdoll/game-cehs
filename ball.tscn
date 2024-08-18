@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://6bj5kq15ipsi"]
+
+[ext_resource type="Texture2D" uid="uid://dnoyqcgrgp5r1" path="res://assets/Sport-Balls-Asset-Pack-Pixel-Art/64x64/baseball.png" id="1_orijc"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_sy6hy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3o8to"]
+radius = 14.0357
+
+[node name="Ball" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_sy6hy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(3.8147e-06, 3.8147e-06)
+scale = Vector2(0.484375, 0.484375)
+texture = ExtResource("1_orijc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_3o8to")
