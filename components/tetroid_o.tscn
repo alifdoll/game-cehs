@@ -3,6 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://ughbcetb068r" path="res://assets/Tetrominoes/Tetromino_O.png" id="1_sfged"]
 
 [node name="TetroidO" type="RigidBody2D" groups=["Blocks"]]
+collision_layer = 255
+collision_mask = 255
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_sfged")

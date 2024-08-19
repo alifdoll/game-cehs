@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "D:\\Godot Project\\2d game\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{2135DD24-C648-4586-B28B-389CAB5378F1}|2d game.csproj|d:\\godot project\\2d game\\scripts\\cranehook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2135DD24-C648-4586-B28B-389CAB5378F1}|2d game.csproj|solutionrelative:scripts\\cranehook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2135DD24-C648-4586-B28B-389CAB5378F1}|2d game.csproj|d:\\godot project\\2d game\\scripts\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2135DD24-C648-4586-B28B-389CAB5378F1}|2d game.csproj|solutionrelative:scripts\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2135DD24-C648-4586-B28B-389CAB5378F1}|2d game.csproj|d:\\godot project\\2d game\\script.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2135DD24-C648-4586-B28B-389CAB5378F1}|2d game.csproj|solutionrelative:script.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -14,11 +22,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Main.cs",
+              "DocumentMoniker": "D:\\Godot Project\\2d game\\scripts\\Main.cs",
+              "RelativeDocumentMoniker": "scripts\\Main.cs",
+              "ToolTip": "D:\\Godot Project\\2d game\\scripts\\Main.cs",
+              "RelativeToolTip": "scripts\\Main.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T22:50:06.02Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "CraneHook.cs",
+              "DocumentMoniker": "D:\\Godot Project\\2d game\\scripts\\CraneHook.cs",
+              "RelativeDocumentMoniker": "scripts\\CraneHook.cs",
+              "ToolTip": "D:\\Godot Project\\2d game\\scripts\\CraneHook.cs",
+              "RelativeToolTip": "scripts\\CraneHook.cs",
+              "ViewState": "AQIAABkAAAAAAAAAAAAowCsAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T22:42:06.426Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "script.cs",
               "DocumentMoniker": "D:\\Godot Project\\2d game\\script.cs",
               "RelativeDocumentMoniker": "script.cs",
