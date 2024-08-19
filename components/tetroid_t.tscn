@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dsguwvcd3jd6l"]
+
+[ext_resource type="Texture2D" uid="uid://doak0o22gvgyh" path="res://assets/Tetrominoes/Tetromino_T.png" id="1_w8u7y"]
+
+[node name="TetroidT" type="RigidBody2D" groups=["Blocks"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_w8u7y")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(47, 2, 17, 2, 17, 32, -17, 32, -17, 2, -47, 2, -47, -32, 47, -32)

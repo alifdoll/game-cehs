@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://ceh6nru18obd3"]
+[gd_scene load_steps=8 format=3 uid="uid://ceh6nru18obd3"]
 
+[ext_resource type="Script" path="res://scripts/Main.cs" id="1_0m6ap"]
 [ext_resource type="Texture2D" uid="uid://w1pj6enm5rh4" path="res://assets/brackeys_platformer_assets/sprites/platforms.png" id="1_00tga"]
-[ext_resource type="Script" path="res://script.cs" id="2_ro81i"]
-[ext_resource type="PackedScene" uid="uid://bqap0umi0vhj3" path="res://crate.tscn" id="3_u0vso"]
+[ext_resource type="PackedScene" uid="uid://boybtgm356qf3" path="res://crane_hook.tscn" id="1_cbcul"]
+[ext_resource type="PackedScene" uid="uid://druayejrrdckq" path="res://components/tetroid_i.tscn" id="5_yvolm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hpwe7"]
 texture = ExtResource("1_00tga")
@@ -50,17 +51,28 @@ texture = ExtResource("1_00tga")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_hpwe7")
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cbijc"]
+
 [node name="Game" type="Node2D"]
+script = ExtResource("1_0m6ap")
+
+[node name="CraneHook" parent="." instance=ExtResource("1_cbcul")]
+position = Vector2(500, 0)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 451)
+offset = Vector2(0, -128)
 
 [node name="TileMap" type="TileMap" parent="."]
+position = Vector2(576, 451)
 tile_set = SubResource("TileSet_3omyh")
 format = 2
-layer_0/tile_data = PackedInt32Array(0, 65536, 0, 1, 131072, 0, 2, 131072, 0, 3, 131072, 0, 4, 131072, 0, 5, 131072, 0, 6, 131072, 0, 7, 131072, 0)
-script = ExtResource("2_ro81i")
+layer_0/tile_data = PackedInt32Array(0, 65536, 0, 1, 131072, 0, 2, 131072, 0, 3, 131072, 0, 4, 131072, 0, 5, 131072, 0, 6, 131072, 0, 7, 131072, 0, -393219, 131072, 0, -393218, 65536, 0, -393217, 131072, 0, -393221, 0, 0, -393220, 65536, 0, -393224, 0, 0, -393223, 65536, 0, -393222, 131072, 0, -393227, 0, 0, -393226, 65536, 0, -393225, 131072, 0, -393230, 0, 0, -393229, 65536, 0, -393228, 131072, 0, -393233, 0, 0, -393232, 65536, 0, -393231, 131072, 0, -393236, 0, 0, -393235, 65536, 0, -393234, 131072, 0, -393239, 0, 0, -393238, 65536, 0, -393237, 131072, 0, -393242, 0, 0, -393241, 65536, 0, -393240, 131072, 0, -393245, 0, 0, -393244, 65536, 0, -393243, 131072, 0, -393248, 0, 0, -393247, 65536, 0, -393246, 131072, 0)
 
 [node name="Object" type="Node2D" parent="."]
+position = Vector2(576, 451)
 
-[node name="Crate2" parent="Object" instance=ExtResource("3_u0vso")]
-position = Vector2(26, -2)
+[node name="TetroidI" parent="." instance=ExtResource("5_yvolm")]
+position = Vector2(558, 292)
+physics_material_override = SubResource("PhysicsMaterial_cbijc")
+gravity_scale = 0.0
