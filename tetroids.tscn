@@ -1,0 +1,25 @@
+[gd_scene load_steps=8 format=3 uid="uid://3mnl6dpgkleo"]
+
+[ext_resource type="PackedScene" uid="uid://dsguwvcd3jd6l" path="res://components/tetroid_t.tscn" id="1_unxjl"]
+[ext_resource type="PackedScene" uid="uid://druayejrrdckq" path="res://components/tetroid_i.tscn" id="2_f283x"]
+[ext_resource type="PackedScene" uid="uid://drksqib11e6f" path="res://components/tetroid_o.tscn" id="3_tai14"]
+[ext_resource type="PackedScene" uid="uid://cy0uet37no7b3" path="res://components/tetroid_l.tscn" id="4_1dsfy"]
+[ext_resource type="PackedScene" uid="uid://bsh5v1i8pcn67" path="res://components/tetroid_j.tscn" id="5_oatri"]
+[ext_resource type="PackedScene" uid="uid://qu3b7ofbvnpm" path="res://components/tetroid_s.tscn" id="6_qs6x2"]
+[ext_resource type="PackedScene" uid="uid://bccony0qyelak" path="res://components/tetroid_z.tscn" id="7_2fld3"]
+
+[node name="Tetroids" type="Node2D"]
+
+[node name="TetroidT" parent="." instance=ExtResource("1_unxjl")]
+
+[node name="TetroidI" parent="." instance=ExtResource("2_f283x")]
+
+[node name="TetroidO" parent="." instance=ExtResource("3_tai14")]
+
+[node name="TetroidL" parent="." instance=ExtResource("4_1dsfy")]
+
+[node name="TetroidJ" parent="." instance=ExtResource("5_oatri")]
+
+[node name="TetroidS" parent="." instance=ExtResource("6_qs6x2")]
+
+[node name="TetroidZ" parent="." instance=ExtResource("7_2fld3")]

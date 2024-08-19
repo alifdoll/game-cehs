@@ -1,0 +1,114 @@
+[gd_scene load_steps=15 format=3 uid="uid://boybtgm356qf3"]
+
+[ext_resource type="Texture2D" uid="uid://depj7ss602koh" path="res://assets/Keshoian Magnemite (Rock&Grass).png" id="1_1ew4d"]
+[ext_resource type="Script" path="res://scripts/CraneHook.cs" id="1_d7lik"]
+[ext_resource type="Texture2D" uid="uid://b1jl3taakohft" path="res://assets/link.png" id="2_4yowk"]
+[ext_resource type="Texture2D" uid="uid://bi33knifyn1sg" path="res://assets/Industrial Sprites/Industrial Sprites/sConcreteFloor.png" id="2_vxfh4"]
+[ext_resource type="Script" path="res://scripts/Anchor.cs" id="2_wqiab"]
+[ext_resource type="Texture2D" uid="uid://ughbcetb068r" path="res://assets/Tetrominoes/Tetromino_O.png" id="6_ekuh8"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_0igdg"]
+a = Vector2(0, -160)
+b = Vector2(0, 160)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6pc5m"]
+size = Vector2(48, 48)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cuvm0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_51e37"]
+radius = 34.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vurw6"]
+radius = 34.0
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8iyk2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nxixh"]
+size = Vector2(1, 48)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_evslh"]
+
+[node name="CraneHook" type="Node2D" node_paths=PackedStringArray("hook")]
+script = ExtResource("1_d7lik")
+hook = NodePath("Hook")
+
+[node name="ChainLink" type="RigidBody2D" parent="."]
+position = Vector2(192, 160)
+collision_layer = 2
+collision_mask = 2
+
+[node name="Link" type="Sprite2D" parent="ChainLink"]
+texture_filter = 1
+texture_repeat = 2
+texture = ExtResource("2_4yowk")
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 320)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChainLink"]
+z_index = -1
+shape = SubResource("SegmentShape2D_0igdg")
+
+[node name="Anchor" type="CharacterBody2D" parent="."]
+position = Vector2(192, 0)
+motion_mode = 1
+script = ExtResource("2_wqiab")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Anchor"]
+node_a = NodePath("..")
+node_b = NodePath("../../ChainLink")
+
+[node name="AnchorSprite" type="Sprite2D" parent="Anchor"]
+texture_filter = 1
+texture = ExtResource("2_vxfh4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Anchor"]
+shape = SubResource("RectangleShape2D_6pc5m")
+
+[node name="Hook" type="RigidBody2D" parent="."]
+position = Vector2(192, 320)
+physics_material_override = SubResource("PhysicsMaterial_cuvm0")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Hook"]
+scale = Vector2(0.999999, 0.999999)
+node_a = NodePath("../../ChainLink")
+node_b = NodePath("..")
+
+[node name="HookSprite" type="Sprite2D" parent="Hook"]
+texture_filter = 1
+texture = ExtResource("1_1ew4d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hook"]
+scale = Vector2(0.999999, 0.999999)
+shape = SubResource("CircleShape2D_51e37")
+disabled = true
+
+[node name="Area2D" type="Area2D" parent="Hook"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hook/Area2D"]
+shape = SubResource("CircleShape2D_vurw6")
+
+[node name="RightBlocker" type="StaticBody2D" parent="."]
+position = Vector2(384, 0)
+physics_material_override = SubResource("PhysicsMaterial_8iyk2")
+
+[node name="Sprite2D" type="Sprite2D" parent="RightBlocker"]
+visible = false
+scale = Vector2(0.333333, 0.333333)
+texture = ExtResource("6_ekuh8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightBlocker"]
+shape = SubResource("RectangleShape2D_nxixh")
+
+[node name="LeftBLocker" type="StaticBody2D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_evslh")
+
+[node name="Sprite2D" type="Sprite2D" parent="LeftBLocker"]
+visible = false
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("6_ekuh8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftBLocker"]
+shape = SubResource("RectangleShape2D_nxixh")
+
+[connection signal="body_entered" from="Hook/Area2D" to="." method="_on_area_2d_body_entered"]

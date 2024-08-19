@@ -2,27 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bi33knifyn1sg"
-path.s3tc="res://.godot/imported/sConcreteFloor.png-1a37e892d05c0908c9d55e0837399526.s3tc.ctex"
+uid="uid://doak0o22gvgyh"
+path="res://.godot/imported/Tetromino_T.png-1c5a1d49b71161ce62cd173d1c306b99.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Industrial Sprites/Industrial Sprites/sConcreteFloor.png"
-dest_files=["res://.godot/imported/sConcreteFloor.png-1a37e892d05c0908c9d55e0837399526.s3tc.ctex"]
+source_file="res://assets/Tetrominoes/Tetromino_T.png"
+dest_files=["res://.godot/imported/Tetromino_T.png-1c5a1d49b71161ce62cd173d1c306b99.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -32,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1
