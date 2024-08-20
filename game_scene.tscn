@@ -1,9 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://ceh6nru18obd3"]
+[gd_scene load_steps=9 format=3 uid="uid://ceh6nru18obd3"]
 
-[ext_resource type="Script" path="res://scripts/Main.cs" id="1_0m6ap"]
 [ext_resource type="Texture2D" uid="uid://w1pj6enm5rh4" path="res://assets/brackeys_platformer_assets/sprites/platforms.png" id="1_00tga"]
 [ext_resource type="PackedScene" uid="uid://bidplkgc1g4aa" path="res://crane_hook.tscn" id="1_cbcul"]
-[ext_resource type="PackedScene" uid="uid://druayejrrdckq" path="res://components/tetroid_i.tscn" id="5_yvolm"]
+[ext_resource type="PackedScene" uid="uid://drksqib11e6f" path="res://components/tetroid_o.tscn" id="4_l3q8l"]
+[ext_resource type="PackedScene" uid="uid://bsh5v1i8pcn67" path="res://components/tetroid_j.tscn" id="5_ps08j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hpwe7"]
 texture = ExtResource("1_00tga")
@@ -51,13 +51,14 @@ texture = ExtResource("1_00tga")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_hpwe7")
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cbijc"]
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qjas3"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_eltdk"]
 
 [node name="Game" type="Node2D"]
-script = ExtResource("1_0m6ap")
 
 [node name="CraneHook" parent="." instance=ExtResource("1_cbcul")]
-position = Vector2(500, 0)
+position = Vector2(471, -95)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 451)
@@ -72,7 +73,10 @@ layer_0/tile_data = PackedInt32Array(0, 65536, 0, 1, 131072, 0, 2, 131072, 0, 3,
 [node name="Object" type="Node2D" parent="."]
 position = Vector2(576, 451)
 
-[node name="TetroidI" parent="." instance=ExtResource("5_yvolm")]
-position = Vector2(558, 292)
-physics_material_override = SubResource("PhysicsMaterial_cbijc")
-gravity_scale = 0.0
+[node name="TetroidO" parent="Object" instance=ExtResource("4_l3q8l")]
+position = Vector2(-73, -189)
+physics_material_override = SubResource("PhysicsMaterial_qjas3")
+
+[node name="TetroidJ" parent="Object" instance=ExtResource("5_ps08j")]
+position = Vector2(-206, -220)
+physics_material_override = SubResource("PhysicsMaterial_eltdk")

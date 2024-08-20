@@ -1,11 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://cy0uet37no7b3"]
+[gd_scene load_steps=4 format=3 uid="uid://cy0uet37no7b3"]
 
+[ext_resource type="Script" path="res://scripts/Tetroids.cs" id="1_0qlcj"]
 [ext_resource type="Texture2D" uid="uid://dj1exix6q7tjj" path="res://assets/Tetrominoes/Tetromino_L.png" id="1_o2ok8"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_e76ca"]
+
 [node name="TetroidL" type="RigidBody2D" groups=["Blocks"]]
+physics_material_override = SubResource("PhysicsMaterial_e76ca")
+script = ExtResource("1_0qlcj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
 texture = ExtResource("1_o2ok8")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(2, 2)
 polygon = PackedVector2Array(2, 13, 32, 13, 32, 47, -32, 47, -32, -47, 2, -47)

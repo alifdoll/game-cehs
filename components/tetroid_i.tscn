@@ -1,12 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://druayejrrdckq"]
+[gd_scene load_steps=5 format=3 uid="uid://druayejrrdckq"]
 
 [ext_resource type="Texture2D" uid="uid://dmltjcne0sux0" path="res://assets/Tetrominoes/Tetromino_I.png" id="1_4kr16"]
+[ext_resource type="Script" path="res://scripts/Tetroids.cs" id="1_72pfk"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_to6pl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l4dxi"]
 
 [node name="TetroidI" type="RigidBody2D" groups=["Blocks"]]
-scale = Vector2(0.5, 0.5)
+physics_material_override = SubResource("PhysicsMaterial_to6pl")
+script = ExtResource("1_72pfk")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
 texture = ExtResource("1_4kr16")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(2, 2)
 polygon = PackedVector2Array(17, 60, -17, 60, -17, -60, 17, -60)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionPolygon2D"]
+shape = SubResource("RectangleShape2D_l4dxi")
+disabled = true
