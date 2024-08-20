@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxvyuwagwrumj"]
+
+[ext_resource type="Script" path="res://scripts/Spawner.cs" id="1_indbe"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bks5x"]
+radius = 60.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rvts8"]
+size = Vector2(400, 40)
+
+[node name="Spawner" type="Node2D" node_paths=PackedStringArray("areaSpawner")]
+script = ExtResource("1_indbe")
+areaSpawner = NodePath("AreaSpawner")
+
+[node name="AreaSpawner" type="Area2D" parent="."]
+position = Vector2(0, 200)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaSpawner"]
+shape = SubResource("CircleShape2D_bks5x")
+
+[node name="AreaDespawner" type="Area2D" parent="."]
+position = Vector2(0, 800)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDespawner"]
+shape = SubResource("RectangleShape2D_rvts8")
+
+[connection signal="body_exited" from="AreaDespawner" to="." method="_on_area_despawner_body_exited"]

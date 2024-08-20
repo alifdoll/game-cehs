@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bidplkgc1g4aa"]
+[gd_scene load_steps=16 format=3 uid="uid://bidplkgc1g4aa"]
 
 [ext_resource type="Texture2D" uid="uid://depj7ss602koh" path="res://assets/Keshoian Magnemite (Rock&Grass).png" id="1_1ew4d"]
 [ext_resource type="Script" path="res://scripts/CraneHook.cs" id="1_d7lik"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://bi33knifyn1sg" path="res://assets/Industrial Sprites/Industrial Sprites/sConcreteFloor.png" id="2_vxfh4"]
 [ext_resource type="Script" path="res://scripts/Anchor.cs" id="2_wqiab"]
 [ext_resource type="Texture2D" uid="uid://ughbcetb068r" path="res://assets/Tetrominoes/Tetromino_O.png" id="6_ekuh8"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_soonb"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_0igdg"]
 a = Vector2(0, -160)
@@ -37,6 +39,13 @@ hook = NodePath("Hook")
 position = Vector2(192, 160)
 collision_layer = 2
 collision_mask = 2
+physics_material_override = SubResource("PhysicsMaterial_soonb")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="ChainLink"]
+position = Vector2(0, 160)
+scale = Vector2(0.999999, 0.999999)
+node_a = NodePath("..")
+node_b = NodePath("../../Hook")
 
 [node name="Link" type="Sprite2D" parent="ChainLink"]
 texture_filter = 1
@@ -46,7 +55,6 @@ region_enabled = true
 region_rect = Rect2(16, 16, 16, 320)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ChainLink"]
-z_index = -1
 shape = SubResource("SegmentShape2D_0igdg")
 
 [node name="Anchor" type="CharacterBody2D" parent="."]
@@ -67,12 +75,9 @@ shape = SubResource("RectangleShape2D_6pc5m")
 
 [node name="Hook" type="RigidBody2D" parent="."]
 position = Vector2(192, 320)
+collision_layer = 128
+collision_mask = 128
 physics_material_override = SubResource("PhysicsMaterial_cuvm0")
-
-[node name="PinJoint2D" type="PinJoint2D" parent="Hook"]
-scale = Vector2(0.999999, 0.999999)
-node_a = NodePath("../../ChainLink")
-node_b = NodePath("..")
 
 [node name="HookSprite" type="Sprite2D" parent="Hook"]
 texture_filter = 1
@@ -87,6 +92,11 @@ disabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hook/Area2D"]
 shape = SubResource("CircleShape2D_vurw6")
+
+[node name="HookPin" type="PinJoint2D" parent="Hook"]
+node_a = NodePath("..")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Hook"]
 
 [node name="RightBlocker" type="StaticBody2D" parent="."]
 position = Vector2(384, 0)
