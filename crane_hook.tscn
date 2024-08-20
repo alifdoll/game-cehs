@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://boybtgm356qf3"]
+[gd_scene load_steps=15 format=3 uid="uid://bidplkgc1g4aa"]
 
 [ext_resource type="Texture2D" uid="uid://depj7ss602koh" path="res://assets/Keshoian Magnemite (Rock&Grass).png" id="1_1ew4d"]
 [ext_resource type="Script" path="res://scripts/CraneHook.cs" id="1_d7lik"]

@@ -8,8 +8,10 @@ size = Vector2(26, 26)
 [node name="Crate" type="RigidBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-11, -11)
 scale = Vector2(0.541667, 0.541667)
 texture = ExtResource("1_ufdgn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-11, -11)
 shape = SubResource("RectangleShape2D_0f2fx")

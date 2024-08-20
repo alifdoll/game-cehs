@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://3mnl6dpgkleo"]
+[gd_scene load_steps=8 format=3 uid="uid://b7me7onsvt7el"]
 
 [ext_resource type="PackedScene" uid="uid://dsguwvcd3jd6l" path="res://components/tetroid_t.tscn" id="1_unxjl"]
 [ext_resource type="PackedScene" uid="uid://druayejrrdckq" path="res://components/tetroid_i.tscn" id="2_f283x"]

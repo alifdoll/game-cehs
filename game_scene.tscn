@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/Main.cs" id="1_0m6ap"]
 [ext_resource type="Texture2D" uid="uid://w1pj6enm5rh4" path="res://assets/brackeys_platformer_assets/sprites/platforms.png" id="1_00tga"]
-[ext_resource type="PackedScene" uid="uid://boybtgm356qf3" path="res://crane_hook.tscn" id="1_cbcul"]
+[ext_resource type="PackedScene" uid="uid://bidplkgc1g4aa" path="res://crane_hook.tscn" id="1_cbcul"]
 [ext_resource type="PackedScene" uid="uid://druayejrrdckq" path="res://components/tetroid_i.tscn" id="5_yvolm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hpwe7"]
